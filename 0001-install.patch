@@ -1,0 +1,45 @@
+From c4425377c7caca2ba0806cac205126cddd8f5049 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 19 Sep 2024 11:17:23 +0800
+Subject: [PATCH] install
+
+---
+ src/CMakeLists.txt        |  5 +++++
+ src/qutselect-2.4.desktop | 11 +++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 src/qutselect-2.4.desktop
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 99fa33c..ebd81d8 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -60,3 +60,8 @@ set_target_properties(qutselect PROPERTIES OUTPUT_NAME qutselect-${PROJECT_VERSI
+ install(TARGETS qutselect
+         RUNTIME DESTINATION bin
+ )
++
++install(FILES images/solaris-logo.png
++        DESTINATION share/icons)
++install(FILES qutselect-2.4.desktop
++            DESTINATION share/applications)
+diff --git a/src/qutselect-2.4.desktop b/src/qutselect-2.4.desktop
+new file mode 100644
+index 0000000..68f3fd1
+--- /dev/null
++++ b/src/qutselect-2.4.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=qutselect-2.4
++Name=qutselect
++Name[zh_CN]=qutselect
++Icon=solaris-logo
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=qutselect
++Version=2.4
+\ No newline at end of file
+-- 
+2.43.4
+
